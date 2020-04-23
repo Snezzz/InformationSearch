@@ -1,0 +1,267 @@
+<article class="post post_full" id="post_242381" lang="ru">
+  <div class="post__wrapper">
+    <header class="post__meta">
+        <a class="post__user-info user-info" href="https://habr.com/ru/users/ragequit/" title="Автор публикации">
+            <img class="user-info__image-pic user-info__image-pic_small" height="24" src="//habrastorage.org/getpro/habr/avatars/51c/089/f50/51c089f5046fde9b1713c50554d1b3ac.png" width="24"/>
+          <span class="user-info__nickname user-info__nickname_small">ragequit</span>
+        </a>
+
+      <span class="post__time" data-time_published="2014-11-05T14:12Z">5 ноября 2014 в 17:12</span>
+
+      
+    </header>
+
+    <h1 class="post__title post__title_full">
+      <span class="post__title-text">Подводная укладка кабелей. Как это делается</span>
+    </h1>
+
+
+      <ul class="post__hubs post__hubs_full-post inline-list">
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/it-infrastructure/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'IT-инфраструктура'); }" title="Вы не подписаны на этот хаб">IT-инфраструктура</a>, 
+          </li>
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/network_technologies/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Сетевые технологии'); }" title="Вы не подписаны на этот хаб">Сетевые технологии</a>
+          </li>
+      </ul>
+
+    <ul class="post__marks inline-list"></ul>
+
+    <div class="post__body post__body_full">
+      <div class="post__text post__text-html post__text_v1" data-io-article-url="https://habr.com/ru/post/242381/" id="post-content-body">В начале июля я подготовил интересную для сообщества публикацию о <a href="http://habrahabr.ru/post/228415/">глубоководных кабелях связи</a>, в которой основной упор был сделан на особенности конструкции глубоководного кабеля по сравнению с привычной нам оптикой. К сожалению, очень мало внимания было уделено самому процессу и способам укладки кабеля по дну рек, морей и океанов. Сейчас я хочу исправить эту ситуацию и познакомить вас с краткой информацией о том, как же прокладываются линии связи, в том числе в таких непростых как водная среда условиях.<br/>
+<br/>
+<img src="https://habrastorage.org/files/1e4/1a0/d44/1e41a0d44908498cadc2984412c899a8.jpg"/><br/>
+<a name="habracut"></a><br/>
+<h4>Но сначала о главном. Об оборудовании</h4><br/>
+В комментариях к предыдущему материалу возник резонный вопрос, что за черное устройство схематически изображено на гифке, показывающей процесс укладки кабеля?<br/>
+<img src="https://habrastorage.org/getpro/habr/post_images/0af/936/80a/0af93680a6fdfe8398b0b7c7471a3d78.gif"/><br/>
+<br/>
+Как это ни удивительно, данное устройство называется <b>подводный кабелеукладчик</b>. Исходя из конструкции кабелеукладчики разделяют на несколько типов:<br/>
+<br/>
+<ul>
+<li>Ножевые</li>
+<li>Роторные</li>
+<li>Гидравлические</li>
+</ul><br/>
+<b>Ножевой кабелеукладчик</b> представляет из себя аналог плуга и имеет весьма незамысловатую конструкцию: рабочий расклинивающий нож и передний нож, барабаны, на которые намотан кабель для укладки, кассеты, ролики, уменьшающие трение кабеля внутри кассеты. Ножевой кабелеукладчик во время работы буксируется. На примере схематического изображения ниже могут использоваться трактора или другие тяговые машины на колесном или гусеничном ходу.<br/>
+<br/>
+<img src="https://habrastorage.org/files/03c/fef/7a6/03cfef7a6c7d42d79e32614e9db2ec92.png"/><br/>
+<br/>
+Принцип работы ножевого кабелеукладчика выглядит следующим образом: При движении рабочий нож расклинивает грунт, образует траншею между поверхностью грунта и своей расклинивающей частью, глубина которой достигает 1,5 метров. К тыльной стороне ножа на шарнирах прикреплена пустая кассета, через которую пропускается кабель (или сразу несколько кабелей) и укладывается на ее дно.<br/>
+<br/>
+Также существуют и самодостаточные модели на собственном ходу, не требующие буксировки.<br/>
+<br/>
+<img src="https://habrastorage.org/files/510/f50/ce5/510f50ce5f5748df8bf8987cbb9a8faf.png"/><br/>
+<br/>
+Однако, если вы думаете, что достаточно воткнуть нож и начать тянуть, вы глубоко заблуждаетесь. Для различных типов грунтов существуют свои правила и рекомендации по проведению подготовительных мероприятий перед началом использования кабелеукладчика. В первую очередь — это так называемая пропорка или по-другому рыхление грунта. Интенсивность и масштабность проведения подготовительных работ напрямую зависит от типа грунта. Понятное дело, что копать мягкий грунт проще, чем скальную породу, да и шанс нарваться в процессе на препятствия на порядок ниже.<br/>
+<br/>
+Отдельным подтипом является <b>подводный ножевой кабелеукладчик</b>. Закапывать кабель в грунт в прибрежных зонах необходимо для того, чтобы уберечь его от якорей, траллов и прочей человеческой и животной деятельности. Используется данный метод в прибрежных зонах на небольших глубинах. Само устройство двигается по дну на специальных полозьях. Обычный подводный кабелеукладчик прорывает не очень широкую, 0.1 — 0.2 м, и неглубокую, ~0.7 м, траншею, в которую закладывается кабель. Само оборудование буксируется судном со скоростью примерно 3 км/ч и связано с ним отдельным кабелем для контроля состояния самого устройства и проводимых им работ.<br/>
+<br/>
+<b>Роторный кабелеукладчик</b> — это самоходный роторный экскаватор с прицепной тележкой, оборудованной устройствами для погрузки, транспортировки и укладки кабеля. Такой кабелеукладчик используется для прокладки кабеля и в талых, и в мерзлых грунтах. Основное рабочее устройство роторного кабелеукладчика — диск с режущими зубьями. Производительность роторного кабелеукладчика — до 1 км траншеи в день.<br/>
+<br/>
+Принципиальное отличие конструкции по сравнению с ножевым кабелеукладчиком заключается механизме копания траншеи:<br/>
+<br/>
+<div style="text-align:center;"><img src="https://habrastorage.org/files/0a7/02f/356/0a702f35687640c9875bc76761023821.gif"/></div><br/>
+<br/>
+Устоявшееся название такого устройства КВГ — Кабелеукладчик Вибрационный Гидравлический, хотя на самом деле он представляет из себя устройство ножевого типа.<br/>
+<br/>
+<b>ПГКУ или Подводные Гидравлические Кабелеукладчики</b> используются при прокладке кабелей через реки и другие водные преграды с использованием судов. К, фактически, гидравлическому буру, который представляет собой основную рабочую часть механизма, подключен шланг/труба идущий к насосу, размещенному на судне. На бур подается струя воды под давлением, которая разрыхляет породу и пробивает в грунте траншею для последующей укладки в нее кабеля.<br/>
+<br/>
+Стоит помнить, что укладка кабеля в грунт под водой необходима только при небольших глубинах. При прокладке кабелей в открытом океане он просто укладывается на дно (глубина до 8 км!), где ничего, кроме морской воды и давления ему не грозит (кроме форс-мажоров в виде сейсмической активности). <br/>
+<br/>
+Если с закапыванием в землю все понятно, то как протянуть кабель через воду может вызвать ряд вопросов.<br/>
+<br/>
+<h4>Мелкие водные преграды</h4><br/>
+Под мелкими водными преградами подразумеваются ручьи, небольшие озера, неширокие болота и реки, в том числе горные.<br/>
+<br/>
+При глубине менее 0.8м к спец. оборудованию не прибегают и производят укладку как и по всей протяженности трассы. При глубине рек от 0.8 до 6.0м используют подводный кабелеукладчик.<br/>
+<br/>
+Перед прокладкой кабеля производится огромное количество подготовительных работ. Я опущу момент о необходимости подготовки инфраструктуры и получения разрешений, и перейду непосредственно к подготовке перед стартом работы кабелеукладчика. Из проводимых мероприятий можно выделить следующие:<br/>
+<br/>
+<ul>
+<li>Срезка береговых откосов бульдозером или экскаватором для обеспечения плавного спуска кабелеукладчика с берегов и выхода его из воды;</li>
+<li>Отмыв гидромониторами обнаруженных при водолазном обследовании препятствий и удаление их с трассы;</li>
+<li>Двух-трехкратная пропорка грунта по намеченному маршруту;</li>
+<li>Проверка герметичности оболочки кабеля избыточным воздушным давлением, испытание постоянным током, прозвонка жил;</li>
+<li>Погрузка кабеля на кабелеукладчик и выход к основной стадии работ.</li>
+</ul><br/>
+<br/>
+Прогон кабелеукладчика через неширокие (менее 300 м) реки производится при помощи тяги тракторной колонны.<br/>
+<br/>
+Немалую роль в ходе работ имеет и местность, в которой они проводятся. Например, замерзание водной поверхности и образование толстого слоя льда, способного выдержать людей и колесно-гусеничное оборудование, как это ни удивительно, значительно облегчает процесс, если на данном отрезке необходимо было использовать кабелеукладочные суда (дистанция 400 и более метров). Рабочими делается майна (прорезь во льду), через которую и опускается на подготовленное дно кабель.<br/>
+<br/>
+<h4>Укладка кабеля на дно при использовании судна</h4><br/>
+Если через неширокие реки протянуть кабель можно используя механизированную технику, расположенную на другом берегу, то для проведения мероприятий по кабелеукладке на широких реках, а так же в прибрежных зонах и открытом море приходится использовать специально оснащенные баржи или суда.<br/>
+<br/>
+Как говорилось выше, для работ под водой популярностью пользуются гидравлические кабелеукладчики. Это вполне резонно: речное или морское дно более податливо, чем мерзлый грунт или горная порода, и усилия поданной под давлением струи воды будет достаточно для того, чтобы «прорубить» щель в грунте для дальнейшей укладки кабеля. <br/>
+<br/>
+Стоит заметить, что в траншеи кабель укладывается на глубинах до 1500-2000 м из-за рыболовецкой деятельности и прочих факторов. В подобных ситуациях приходится использовать ножевой принцип укладки или по-простому опускать на дно морское гигантских размеров плуг, который его вспашет и позволит обезопасить кабель от снастей и прочих неприятностей. На больших глубинах по понятным причинам используются мощные, армированные кабели которые просто укладываются на грунт.<br/>
+<br/>
+<img src="https://habrastorage.org/files/1ae/daa/71d/1aedaa71d0cd46cfa29323a7b380cb87.jpg"/><br/>
+<i>Фото плуга, с расчетной рабочей глубиной в 2000 метров</i><br/>
+<br/>
+Если в случае малых дистанций используется цельный кусок кабеля, то при прокладке в море расстояния увеличиваются в разы, а погонная длина бухты кабеля ограничена. Плюс ко всему, при передаче сигнала на большие расстояния происходит его искажение и затухание. Для компенсации этих потерь, учитывая конструкцию кабеля описанную в предыдущей статье, в местах сращивания или на других необходимых участках используют усилители сигнала и ретрансляторы. Проблем с питанием не возникает, конструкция оптоволоконного кабеля подразумевает возможность передачи тока от которого и запитывается оборудование размещаемое на дистанции до 150 км друг от друга.<br/>
+<br/>
+Вот так выглядит усилитель сигнала до установки монтажа, в частичном разборе:<br/>
+<br/>
+<img alt="image" src="https://habrastorage.org/getpro/habr/post_images/846/308/ef5/846308ef5fae1d98d4c228640669d8d9.jpg"/><br/>
+<br/>
+А так он выглядит уже готовый к укладке на дне океана:<br/>
+<br/>
+<img src="https://habrastorage.org/files/99d/703/a3b/99d703a3b308435c8980063f67cc1b37.png"/><br/>
+<br/>
+<h5>Но что делать, если ретранслятор ставить рано, а бухта кабеля закончилась?</h5><br/>
+Как говорилось выше, ретрансляторы в зависимости от свойств кабеля и обстоятельств укладки могут монтироваться с частотой до 150 км. Современная промышленность позволяет изготавливать и доставлять кабели длинной в среднем 5, а иногда и 25 км, что значительно меньше, чем дистанция расстановки ретрансляторов. В этих случаях конец одной бухты сращивают с новой, а место соединения защищают так называемой стыковочной коробкой (см. пример такой конструкции ниже):<br/>
+<br/>
+<img src="https://habrastorage.org/files/145/21f/aa3/14521faa3bd24ef3b1a7f764e20adf51.png"/><br/>
+<br/>
+Коробка в разборе:<br/>
+<br/>
+<img src="https://habrastorage.org/files/1fc/5e1/159/1fc5e115936e4b98b8a44a6d80b1a15f.png"/><br/>
+<br/>
+В свою очередь ремонт, например обрыва, уже уложенного кабеля дело не простое, хотя сама процедура схематически весьма банальна. При помощи судна поднимают на поверхность и закрепляют на буй один оборванный конец, потом так же затралливают и поднимают второй конец кабеля. Та часть, в которую проникла под давлением вода отрезают, а для соединения концов используют ремонтный «обрезок» кабеля, специально для этого припасенный. В целом, все выглядит просто и логично: обрезал, зачистил, скрутил, работает. Но масштабы такой «скрутки» поражают, да и к самой укладке она имеет слабое отношение. Если повезет, смогу рассказать об этой процедуре отдельно.<br/>
+<br/>
+Надеюсь, вам понравился данный материал.</div>
+      
+    </div>
+
+    
+
+    <dl class="post__tags">
+      <dt class="post__tags-label">Теги:</dt>
+      <dd class="post__tags-list">    <ul class="inline-list inline-list_fav-tags js-post-tags">
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D0%9A%D0%B0%D0%B1%D0%B5%D0%BB%D0%B8%5D&amp;target_type=posts" rel="tag">Кабели</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%81%D0%B2%D1%8F%D0%B7%D1%8C%5D&amp;target_type=posts" rel="tag">связь</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%83%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0%20%D0%BA%D0%B0%D0%B1%D0%B5%D0%BB%D1%8F%5D&amp;target_type=posts" rel="tag">укладка кабеля</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D0%BA%D0%B0%D0%B1%D0%B5%D0%BB%D0%B5%D1%83%D0%BA%D0%BB%D0%B0%D0%B4%D1%87%D0%B8%D0%BA%D0%B8%5D&amp;target_type=posts" rel="tag">кабелеукладчики</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%5D&amp;target_type=posts" rel="tag">сетевые технологии</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%5D&amp;target_type=posts" rel="tag">познавательное</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D1%8B%5D&amp;target_type=posts" rel="tag">технологические процессы</a></li>
+    </ul>
+    <button class="btn btn_outline_grey btn_mini hidden js-fav-edit-link" data-id="242381" data-type="2" onclick="show_edit_tags(this)" type="button">Добавить метки</button>
+</dd>
+    </dl>
+      <dl class="post__tags">
+        <dt class="post__tags-label">Хабы:</dt>
+        <dd class="post__tags-list">
+          <ul class="inline-list inline-list_fav-tags js-post-hubs">
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/it-infrastructure/" rel="tag">
+                  IT-инфраструктура
+                </a>
+              </li>
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/network_technologies/" rel="tag">
+                  Сетевые технологии
+                </a>
+              </li>
+          </ul>
+        </dd>
+      </dl>
+  </div>
+    <div class="overlay hidden" id="js-vote-reason">
+  <div class="popup popup_reasons">
+    <div class="popup__head popup__head_lang-settings">
+      <span class="popup__head-title">Укажите причину минуса, чтобы автор поработал над ошибками</span>
+      <button class="btn btn_small btn_popup-close js-hide_vote-reason" type="button">
+        <svg class="icon-svg" height="12" width="12">
+          <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="popup__body">
+       <span class="radio radio_custom reasons-vote__item js-vote-popup_list-item">
+          <input class="radio__input js-vote_radio" id="reasonList" name="reasonList" type="radio" value=""/>
+          <label class="radio__label radio__label_another js-vote_title" for="reasonList"></label>
+        </span>
+      <div id="js-vote-popup_list"></div>
+      <button class="btn btn_blue btn_huge js-vote_send" disabled="" type="button">Отправить анонимно</button>
+    </div>
+  </div>
+</div>
+
+</article><ul class="post-stats post-stats_post js-user_" data-post-type="publish_ugc_ru,h_6398,h_17123,f_admin" id="infopanel_post_242381">
+          <li class="post-stats__item post-stats__item_voting-wjt">
+            <div class="voting-wjt voting-wjt_post js-post-vote" data-id="242381" data-type="2">
+              <button class="btn voting-wjt__button" data-action="plus" disabled="" onclick="posts_vote_plus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-up" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+
+              <span class="voting-wjt__counter voting-wjt__counter_positive js-score" onclick="posts_vote_result(133, 130, 3)" title="Всего голосов 133: ↑130 и ↓3">+127</span>
+
+              <button class="btn voting-wjt__button" data-action="minus" disabled="" onclick="posts_vote_minus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-down" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+            </div>
+          </li>
+    <li class="post-stats__item post-stats__item_bookmark">
+      <button class="btn bookmark-btn bookmark-btn_post" data-action="add" data-id="242381" data-post-type="publish_ugc_ru,h_6398,h_17123,f_admin" data-type="2" disabled="" onclick="posts_add_to_favorite(this);" title="Только зарегистрированные пользователи могут добавлять публикации в закладки" type="button">
+        <span class="btn_inner"><svg class="icon-svg_bookmark" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#book"></use></svg><span class="bookmark__counter js-favs_count" title="Количество пользователей, добавивших публикацию в закладки">303</span></span>
+      </button>
+    </li>
+
+    <li class="post-stats__item post-stats__item_views">
+      <div class="post-stats__views" title="Количество просмотров">
+        <svg class="icon-svg_views-count" height="12" width="21"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#eye"></use></svg><span class="post-stats__views-count">105k</span>
+      </div>
+    </li>
+
+      <li class="post-stats__item post-stats__item_comments">
+          <a class="post-stats__comments-link" href="https://habr.com/ru/post/242381/#comments" rel="nofollow">
+            <svg class="icon-svg_post-comments" height="16" width="16"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#comment"></use></svg><span class="post-stats__comments-count" title="Читать комментарии">47</span>
+          </a>
+      </li>
+
+
+      <li class="post-stats__item post-stats__item_share">
+        <div class="dropdown dropdown_share">
+          <div class="post-stats__share" data-toggle="dropdown" href="https://habr.com/ru/post/242381/#comments" rel="nofollow">
+            <svg class="icon-svg_post-share" height="24" width="24">
+              <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#share">
+            </use></svg>
+            <span class="post-stats__comments-text" title="Поделиться">
+              Поделиться
+            </span>
+          </div>
+
+          <div class="dropdown-container">
+            <div class="post-share">
+  <ul class="post-share__buttons">
+    <li class="post-share__item post-share__item_post">
+      <span class="post-share__item-link post-share__item-link_normal post-share__item-link_copy" onclick="copyCurrentUrl(), $('.dropdown_share').removeClass('dropdown_active')" title="Скопировать ссылку">
+        Скопировать ссылку
+      </span>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://habr.com/ru/post/242381/" onclick="window.open(this.href, 'Facebook', 'width=640,height=436,toolbar=0,status=0'); return false" title="Facebook">
+        Facebook
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_twitter" href="https://twitter.com/intent/tweet?text=%D0%9F%D0%BE%D0%B4%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F+%D1%83%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0+%D0%BA%D0%B0%D0%B1%D0%B5%D0%BB%D0%B5%D0%B9.+%D0%9A%D0%B0%D0%BA+%D1%8D%D1%82%D0%BE+%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D1%82%D1%81%D1%8F+https://habr.com/p/242381/+via+%40habr_com" onclick="window.open(this.href, 'Twitter', 'width=800,height=300,resizable=yes,toolbar=0,status=0'); return false" title="Twitter">
+        Twitter
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_vkontakte" href="https://vk.com/share.php?url=https://habr.com/ru/post/242381/" onclick="window.open(this.href, 'ВКонтакте', 'width=800,height=300,toolbar=0,status=0'); return false" title="ВКонтакте">
+        ВКонтакте
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_telegram" href="https://t.me/share/url?url=https://habr.com/ru/post/242381/&amp;title=Подводная укладка кабелей. Как это делается" onclick="window.open(this.href, 'Telegram', 'width=800,height=300,toolbar=0,status=0'); return false" title="Telegram">
+        Telegram
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_pocket" href="https://getpocket.com/edit?url=https://habr.com/ru/post/242381/&amp;title=Подводная укладка кабелей. Как это делается" target="_blank" title="Pocket">
+        Pocket
+      </a>
+    </li>
+  </ul>
+</div>
+
+          </div>
+        </div>
+      </li>
+
+
+
+
+
+  </ul>

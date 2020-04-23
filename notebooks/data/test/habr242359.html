@@ -1,0 +1,291 @@
+<article class="post post_full" id="post_242359" lang="ru">
+  <div class="post__wrapper">
+    <header class="post__meta">
+        <a class="post__user-info user-info" href="https://habr.com/ru/users/nitro2005/" title="Автор публикации">
+            <span class="default-image_mini default-image_pink">
+              <svg aria-hidden="true" class="icon-svg" height="24" role="img" version="1.1" viewBox="0 0 24 24" width="24"><path d="M21.5 24h-19c-1.379 0-2.5-1.122-2.5-2.5v-19c0-1.379 1.122-2.5 2.5-2.5h19c1.379 0 2.5 1.122 2.5 2.5v19c0 1.379-1.122 2.5-2.5 2.5zm-19-23c-.827 0-1.5.673-1.5 1.5v19c0 .827.673 1.5 1.5 1.5h19c.827 0 1.5-.673 1.5-1.5v-19c0-.827-.673-1.5-1.5-1.5h-19zM15.598 12.385zM19.438 15.417l-.002-.005v-.001c-.875-2.226-2.484-3.054-3.445-3.549l-.273-.143c.029-.497-.025-1.034-.167-1.599l-.128.032.123-.044c-.765-2.152-1.757-2.585-2.632-2.967l-.006-.003-.535-2.121c.357-.065.628-.375.628-.752.001-.423-.342-.765-.765-.765s-.766.342-.766.765c0 .358.248.657.581.74l-.825 1.654-.014-.003-.024-.003c-1.053-.033-1.842.369-2.5.947-.633-.322-1.515-.729-2.158-1.814.107-.12.174-.276.174-.45 0-.375-.303-.678-.678-.678s-.678.303-.678.678.303.678.678.678l.221-.04c.416.597 1.09 1.181 1.347 2.828l-.072.091.104.081-.112-.067c-1.157 1.914-.793 4.248.207 5.37-.998 2.546-1.035 4.681-.097 5.868l.002.002.003.003c.119.162.313.233.524.233.189 0 .39-.057.559-.154.312-.179.441-.459.326-.713l-.12.054.119-.056c-.581-1.243-.474-2.713.314-4.37.4.131.778.208 1.145.234l.139.73c.264 1.418.514 2.757 1.297 4.006.132.264.453.387.777.387.122 0 .245-.018.357-.051.385-.116.591-.399.537-.738l-.129.021.125-.042c-.204-.606-.431-1.146-.649-1.67-.373-.894-.725-1.742-.891-2.737.407-.042.797-.129 1.161-.261.825.692 1.661 1.492 2.743 3.406h.001c.072.14.224.215.41.215.105 0 .222-.024.339-.073.365-.155.652-.531.477-1.006v-.001c-.432-1.849-1.426-2.778-2.428-3.547.162-.175.311-.366.442-.576.75.399 1.878 1.005 3.127 2.766l.047.067.011-.008c.151.156.317.24.48.24.096 0 .191-.027.279-.084.306-.194.439-.662.29-1.005zm-8.878-2.493c-.947 0-1.713-.767-1.713-1.713s.767-1.713 1.713-1.713c.947 0 1.713.767 1.713 1.713s-.767 1.713-1.713 1.713zm6.587 4.648l-.084.021v-.001l.084-.02zm-2.007-5.312zm.022 1.006zM11.225 11.604c0 .385-.312.697-.697.697s-.697-.312-.697-.697c0-.385.312-.697.697-.697s.697.312.697.697z"></path></svg>
+            </span>
+          <span class="user-info__nickname user-info__nickname_small">nitro2005</span>
+        </a>
+
+      <span class="post__time" data-time_published="2014-11-05T09:41Z">5 ноября 2014 в 12:41</span>
+
+      
+    </header>
+
+    <h1 class="post__title post__title_full">
+      <span class="post__title-text">ZeroMQ: сокеты по-новому</span>
+    </h1>
+
+
+      <ul class="post__hubs post__hubs_full-post inline-list">
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/programming/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Программирование'); }" title="Вы не подписаны на этот хаб">Программирование</a>, 
+          </li>
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/c/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'C'); }" title="Вы не подписаны на этот хаб">C</a>
+          </li>
+      </ul>
+
+    <ul class="post__marks inline-list"><li class="inline-list__item inline-list__item_post-type"><a class="post__type-label" href="https://habr.com/ru/sandbox/" title="Перейти в песочницу">Из песочницы</a></li></ul>
+
+    <div class="post__body post__body_full">
+      <div class="post__text post__text-html post__text_v1" data-io-article-url="https://habr.com/ru/post/242359/" id="post-content-body">В любом среднем или крупном приложении, будь оно desktop или web, для бизнеса или для личного пользования, программисту необходимо решить важную архитектурную задачу — как будут общаться между собой потоки, процессы, модули, ноды, кластера, и прочие части эко-системы его приложения.<br/>
+<br/>
+Многие разработчики решают идти по пути наименьшего сопротивления, возложив эту задачу, например, на СУБД. Скажем, один процесс положил данные в БД, второй прочитал, обработал — положил еще и так далее.<br/>
+Про обмен через файлы в наши годы уже стыдно говорить, но и такое случается.<br/>
+Другие же программисты пытаются создать какое-то свое, специализированное решение и, как правило, выбирают сокеты.<br/>
+<br/>
+Задача проектирования и разработки архитектуры приложения крайне интересная, но это отдельная тема. В данном посте хотел бы поделиться своим первым впечатлением от знакомства с библиотекой ZeroMQ.<br/>
+<br/>
+ZeroMQ предлагает разработчику некий высокий уровень абстракции при работе с «сокетами». Библиотека берет на себя часть забот по буферизации данных, обслуживанию очередей, установлению и восстановлению соединений, и прочие вещи. Вместо того, чтобы заниматься такими глупостями, вы можете сосредоточиться на главном — архитектуре и логике приложения.<br/>
+<br/>
+Однако, в этом мире бесплатный сыр только в мышеловке. Поэтому я постарался по мере сил и опыта выяснить, чем придется поплатиться за удобство, какие я нашел плюсы и минусы при применении данной библиотеки.<br/>
+<a name="habracut"></a><br/>
+Непосредственно описание ZeroMQ, его API и кучу другой полезной информации можно найти на <a href="http://zeromq.org/">официальном сайте ZeroMQ</a>.<br/>
+<br/>
+Кроме того, очень рекомендую прочитать весь <a href="http://zguide.zeromq.org/page:all">Guide</a> на официальном сайте даже в том случае, если не будете пользоваться библиотекой — он полон правильных посылов и в целом полезен для изучения различных видов сетевых архитектур.<br/>
+<br/>
+Мы же займемся решением типовой задачи и сравним решение на основе традиционных сокетов и «сокетов ZeroMQ».<br/>
+<br/>
+<h4>Итак, задача</h4><br/>
+Предположим, мы имеем некий сервис, который принимает по сокету соединение клиента, получает от него запросы и отправляет на них ответы.<br/>
+Для простоты, пусть это будет эхо-сервис, т.е. что получил — то и отправил.<br/>
+<br/>
+Далее нужно определиться с форматом обмена.<br/>
+Традиционный сокет работает с последовательностью байтов, что для приложения, которое обменивается некоторой структурированной информацией, не есть хорошо. Поэтому нам придется создать некий «пакет» с данными, для простоты у пакета будет один атрибут — длина. То есть сначала передаем длину пакета, затем сами данные указанной длины. При приеме соответственно буферизируем принятую последовательность байт и разбираем ее на «пакеты».<br/>
+Внутрь самого «пакета» мы можем запихнуть что угодно: бинарную структуру, текст, JSON, BSON, XML, и т.д.<br/>
+<br/>
+Для простоты, сервер у нас будет принимать и передавать данные в одном потоке.<br/>
+А вот обработка данных на сервере должна происходить в несколько потоков (будем называть их worker-ами).<br/>
+<br/>
+<h4>Решение</h4><br/>
+В качестве решения создал два исходника, один с обычными сокетами, другой с ZeroMQ.<br/>
+Не буду публиковать исходный код в самом посте, для просмотра пройдите по ссылкам:<br/>
+1) <a href="http://pastebin.com/XrMuMSnL">Традиционные сокеты</a> (19 Kb)<br/>
+2) <a href="http://pastebin.com/53ArzzsK">Сокеты ZeroMQ</a> (11,74 Kb)<br/>
+<br/>
+<div class="spoiler"><b class="spoiler_title">Подробнее о тестах</b><div class="spoiler_text">Каждый файл с исходным кодом — это готовый тест, при запуске которого стартует и сервер, и клиенты (в одном процессе, но в разных потоках).<br/>
+Тест работает несколько секунд и выдает результаты работы каждого клиента: сколько пакетов и байт получил, а также среднюю скорость получения пакетов.<br/>
+При старте потока клиента происходит передача одного или нескольких пакетов с данными, а при получении каждого пакета — он передается обратно.<br/>
+Параметры теста можно изменить, они заданы в #define-ах в каждом файле.<br/>
+</div></div><br/>
+<br/>
+Как видно, ZeroMQ сократил объем кода примерно в 2 раза, читабельность улучшилась.<br/>
+Теперь посмотрим, сколько мы за это заплатили.<br/>
+<br/>
+На моей машине при исходных параметрах тест выдал примерно следующие результаты:<br/>
+<br/>
+1) 400 пакетов в секунду (традиционные сокеты);<br/>
+2) 500 пакетов в секунду (ZeroMQ).<br/>
+<i>* Примечание: по-умолчанию в тесте 10 клиентских потоков и 2 worker-а, размер пакета — 1Кб, время «обработки» (имитируем usleep-ом) одного пакета сервером — 2мс</i>.<br/>
+<br/>
+Сразу оговорюсь, что если бы обработка данных у нас шла в один поток, вместе с приемом и передачей, то ZeroMQ проиграл бы обычным сокетам в 2-4 раза. Проверено также на подобном тесте, однако публиковать его я пока не буду, т.к. однопоточный сервер, который обрабатывает одновременно только один запрос, а остальные клиенты ждут — это не наш случай.<br/>
+<br/>
+Давайте разберемся, почему ZeroMQ показал лучшие результаты, чем обычные сокеты, несмотря на некий оверхед из-за уровня абстракции.<br/>
+<br/>
+Основная причина, конечно же, кроется в исходном коде самого теста. Обработка данных в несколько потоков на обычных сокетах — задача довольно сложная. В моем тесте она реализована далеко не оптимальным способом:<br/>
+<br/>
+1) нет никакой очереди задач и принятых пакетов, мы банально не принимаем данные, если не можем их обработать;<br/>
+2) когда worker закончил обработку запроса — он впустую спит, пока основной поток не запишет ему в буфер следующую задачу;<br/>
+3) основной поток в случае занятости worker-ов вхолостую проходит основной цикл, пока worker не освободится (или не появятся события ввода-вывода);<br/>
+4) при записи результата обработки запроса worker-ом в буфер передачи клиента, блокируется основной поток (либо worker ждет пока основной поток пройдет основной цикл).<br/>
+<br/>
+Устранение данных недостатков существенно увеличит объем кода и сложность задачи, увеличится вероятность появления ошибок.<br/>
+<br/>
+Теперь давайте обратимся к варианту с ZeroMQ.<br/>
+<br/>
+Исходный код более читабелен, а главное — лишен каких-либо блокировок (mutex-ов, как в задаче с обычными сокетами). Это основное преимущество ZeroMQ.<br/>
+<br/>
+В традиционном асинхронном программировании блокировки неизбежны, с увеличением объема кода вы обязательно где-то поставите лишнюю блокировку, а где-то забудете поставить нужную. Затем появятся вложенные блокировки, которые в итоге приведут к deadlock-ам и различным race condition. Если ошибки будут происходить в редких случаях, на приложении в production вы замучаетесь их искать. А эффект будет потрясающий — ваш сервис намертво зависнет, несохраненные данные будут потеряны, а клиенты отключатся.<br/>
+<br/>
+ZeroMQ решает эту проблему просто — процессы и потоки лишь обмениваются сообщениями. При этом нужно сделать оговорку, что не рекомендуется расшаривать никакие общие данные между потоками и использовать блокировки. ZeroMQ позволяет не делить между потоками данные о сокетах и их буферы, однако данные самого приложения остаются головной болью разработчика.<br/>
+Внутри процесса между потоками также может происходить обмен сообщениями, и не обязательно через TCP. Достаточно передать функциям zmq_bind/zmq_connect вместо «tcp://127.0.0.1:1010» что-то вроде «ipc://mysock» — и ваш обмен уже работает через UNIX-сокеты, а поставите «inproc://mysock» — и обмен пойдет через внутреннюю память процесса. Это значительно быстрее и экономичнее сокетов.<br/>
+В качестве примера возьмите исходник теста.<br/>
+Поток, который производит обработку данных (worker) — это такой же клиент, но только внутренний. Он подключается к основному потоку через указанный сокет (эффективнее всего inproc://) и получает задание, выполнив которое отправляет результат обратно основному потоку. Последний уже переадресовывает результат внешнему клиенту.<br/>
+ZeroMQ позволяет не заботиться о распределении задач и поиске свободного worker-а. В данном примере он автоматически ставит пакет в очередь на обработку (отправку worker-у).<br/>
+<br/>
+Несомненно, и у ZeroMQ есть довольно весомые минусы. Хоть эта библиотека и берет на себя кучу забот, она не обеспечивает гарантии доставки и сохранности ваших сообщений. Это отдается на откуп разработчика, что совершенно правильно, на мой взгляд.<br/>
+<br/>
+Пройдемся по нескольким, наиболее важным аспектам работы с ZeroMQ.<br/>
+<br/>
+<h4>Соединения</h4><br/>
+Плюсы:<br/>
++ ZeroMQ автоматически восстанавливает исходящие соединения. В приложении вы можете и не заметить разрыва соединения, если, конечно, специально не будете отслеживать это событие (см.zmq_socket_monitor())<br/>
+<br/>
+Минусы:<br/>
+ — Я пока не догадался, как узнать настоящий IP-адрес, имя хоста или хотя бы дескриптор клиента, от которого пришло сообщение. Максимум что дает ZeroMQ — это некий идентификатор клиента (для сокета типа ZMQ_ROUTER), который может быть как назначен ZeroMQ автоматически, так и задан клиентом самостоятельно перед установкой соединения.<br/>
+ — Опять же, я пока не догадался как принудительно отключить клиента (допустим, не авторизовался вовремя). А это чревато накапливанием ненужных соединений.<br/>
+<br/>
+<h4>Очереди</h4><br/>
+Плюсы:<br/>
++ отправляемые в ZeroMQ сообщения попадают во внутреннюю очередь, что позволяет не дожидаться окончания отправки, а в случае исходящего соединения — не имеет значения, установлено оно или нет. Размер очереди может меняться.<br/>
++ существует также очередь на прием, из-за чего реализуется стратегия т.н. «справедливой очереди». В случае входящего соединения, вы получаете сообщения из общей очереди на прием для всех клиентов.<br/>
+<br/>
+Минусы:<br/>
+ — насколько мне известно, вы не можете управлять очередями — очищать, считать фактический размер, и т.д.<br/>
+ — в случае переполнения очереди, новые сообщения отбрасываются<br/>
+<br/>
+<h4>Сообщения</h4><br/>
+Плюсы:<br/>
++ В ZeroMQ вы работаете не с потоком байт, а с отдельными сообщениями, длина которых известна.<br/>
++ Сообщение в ZeroMQ состоит из одного или нескольких т.н. «фреймов», что довольно удобно — можно по мере прохождения сообщения по узлам добавлять/удалять фреймы с метаинформацией, не трогая фрейма с данными. Такой подход, в частности, используется в сокете типа ZMQ_ROUTER — ZeroMQ при приеме сообщения автоматически добавляет первым фреймом идентификатор клиента, от которого оно получено.<br/>
++ Каждое сообщение атомарно, т.е. всегда будет получено или передано полностью, включая все фреймы.<br/>
+<br/>
+Минусы:<br/>
+ — Каждое сообщение должно умещаться в память, т.е. если нужно передавать большие сообщения — придется его разбивать на части (на сообщения, а не фреймы) самостоятельно. Максимальный размер сообщения, при этом, можно настроить.<br/>
+<br/>
+<h4>Лирическое отступление</h4><br/>
+В ZeroMQ, помимо различных видов транспорта (tcp, ipc, inproc и т.д.), существует несколько типов сокетов: REQ, REP, ROUTER, DEALER, PUB, SUB, и т.д.<br/>
+Советую ознакомиться с ними по документации внимательно. От типа сокета на обоих концах зависит его поведение. В некоторых типах сокетов используются дополнительные обязательные фреймы.<br/>
+Упомянутый выше Guide вполне неплохо на примерах ознакомит вас с основными типами сокетов.<br/>
+<br/>
+<h4>Вывод</h4><br/>
+Если вы только начинаете проектировать свое приложение, либо какие-то его отдельные простые части, модули и подзадачи, то очень рекомендую присмотреться к ZeroMQ.<br/>
+В реальном приложении с асинхронной обработкой данных ZeroMQ обеспечит не только сокращение объема кода, но и некоторое увеличение производительности.<br/>
+Бинды данной библиотеки есть для множества языков программирования: C++, C#, CL, Delphi, Erlang, F#, Felix, Haskell, Java, Objective-C, Ruby, Ada, Basic, Clojure, Go, Haxe, Node.js, ooc, Perl, Scala.<br/>
+Библиотека кросс-платформенная, т.е. можно использовать как в Linux, так и под Windows. Правда, к сожалению, пока официальной версии под MinGW не нашел.<br/>
+Но проект быстро развивается, уже много где используется, будем надеятся и верить.<br/>
+<br/>
+Замечания в комментариях приветствуются!</div>
+      
+    </div>
+
+    
+
+    <dl class="post__tags">
+      <dt class="post__tags-label">Теги:</dt>
+      <dd class="post__tags-list">    <ul class="inline-list inline-list_fav-tags js-post-tags">
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5Bzeromq%5D&amp;target_type=posts" rel="tag">zeromq</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5Bsockets%5D&amp;target_type=posts" rel="tag">sockets</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%81%D0%BE%D0%BA%D0%B5%D1%82%D1%8B%5D&amp;target_type=posts" rel="tag">сокеты</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%5D&amp;target_type=posts" rel="tag">клиент-сервер</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B%5D&amp;target_type=posts" rel="tag">сервисы</a></li>
+    </ul>
+    <button class="btn btn_outline_grey btn_mini hidden js-fav-edit-link" data-id="242359" data-type="2" onclick="show_edit_tags(this)" type="button">Добавить метки</button>
+</dd>
+    </dl>
+      <dl class="post__tags">
+        <dt class="post__tags-label">Хабы:</dt>
+        <dd class="post__tags-list">
+          <ul class="inline-list inline-list_fav-tags js-post-hubs">
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/programming/" rel="tag">
+                  Программирование
+                </a>
+              </li>
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/c/" rel="tag">
+                  C
+                </a>
+              </li>
+          </ul>
+        </dd>
+      </dl>
+  </div>
+    <div class="overlay hidden" id="js-vote-reason">
+  <div class="popup popup_reasons">
+    <div class="popup__head popup__head_lang-settings">
+      <span class="popup__head-title">Укажите причину минуса, чтобы автор поработал над ошибками</span>
+      <button class="btn btn_small btn_popup-close js-hide_vote-reason" type="button">
+        <svg class="icon-svg" height="12" width="12">
+          <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="popup__body">
+       <span class="radio radio_custom reasons-vote__item js-vote-popup_list-item">
+          <input class="radio__input js-vote_radio" id="reasonList" name="reasonList" type="radio" value=""/>
+          <label class="radio__label radio__label_another js-vote_title" for="reasonList"></label>
+        </span>
+      <div id="js-vote-popup_list"></div>
+      <button class="btn btn_blue btn_huge js-vote_send" disabled="" type="button">Отправить анонимно</button>
+    </div>
+  </div>
+</div>
+
+</article><ul class="post-stats post-stats_post js-user_" data-post-type="publish_ugc_ru,h_359,h_17717,f_develop" id="infopanel_post_242359">
+          <li class="post-stats__item post-stats__item_voting-wjt">
+            <div class="voting-wjt voting-wjt_post js-post-vote" data-id="242359" data-type="2">
+              <button class="btn voting-wjt__button" data-action="plus" disabled="" onclick="posts_vote_plus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-up" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+
+              <span class="voting-wjt__counter voting-wjt__counter_positive js-score" onclick="posts_vote_result(15, 13, 2)" title="Всего голосов 15: ↑13 и ↓2">+11</span>
+
+              <button class="btn voting-wjt__button" data-action="minus" disabled="" onclick="posts_vote_minus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-down" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+            </div>
+          </li>
+    <li class="post-stats__item post-stats__item_bookmark">
+      <button class="btn bookmark-btn bookmark-btn_post" data-action="add" data-id="242359" data-post-type="publish_ugc_ru,h_359,h_17717,f_develop" data-type="2" disabled="" onclick="posts_add_to_favorite(this);" title="Только зарегистрированные пользователи могут добавлять публикации в закладки" type="button">
+        <span class="btn_inner"><svg class="icon-svg_bookmark" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#book"></use></svg><span class="bookmark__counter js-favs_count" title="Количество пользователей, добавивших публикацию в закладки">158</span></span>
+      </button>
+    </li>
+
+    <li class="post-stats__item post-stats__item_views">
+      <div class="post-stats__views" title="Количество просмотров">
+        <svg class="icon-svg_views-count" height="12" width="21"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#eye"></use></svg><span class="post-stats__views-count">61,3k</span>
+      </div>
+    </li>
+
+      <li class="post-stats__item post-stats__item_comments">
+          <a class="post-stats__comments-link" href="https://habr.com/ru/post/242359/#comments" rel="nofollow">
+            <svg class="icon-svg_post-comments" height="16" width="16"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#comment"></use></svg><span class="post-stats__comments-count" title="Читать комментарии">17</span>
+          </a>
+      </li>
+
+
+      <li class="post-stats__item post-stats__item_share">
+        <div class="dropdown dropdown_share">
+          <div class="post-stats__share" data-toggle="dropdown" href="https://habr.com/ru/post/242359/#comments" rel="nofollow">
+            <svg class="icon-svg_post-share" height="24" width="24">
+              <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#share">
+            </use></svg>
+            <span class="post-stats__comments-text" title="Поделиться">
+              Поделиться
+            </span>
+          </div>
+
+          <div class="dropdown-container">
+            <div class="post-share">
+  <ul class="post-share__buttons">
+    <li class="post-share__item post-share__item_post">
+      <span class="post-share__item-link post-share__item-link_normal post-share__item-link_copy" onclick="copyCurrentUrl(), $('.dropdown_share').removeClass('dropdown_active')" title="Скопировать ссылку">
+        Скопировать ссылку
+      </span>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://habr.com/ru/post/242359/" onclick="window.open(this.href, 'Facebook', 'width=640,height=436,toolbar=0,status=0'); return false" title="Facebook">
+        Facebook
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_twitter" href="https://twitter.com/intent/tweet?text=ZeroMQ%3A+%D1%81%D0%BE%D0%BA%D0%B5%D1%82%D1%8B+%D0%BF%D0%BE-%D0%BD%D0%BE%D0%B2%D0%BE%D0%BC%D1%83+https://habr.com/p/242359/+via+%40habr_com" onclick="window.open(this.href, 'Twitter', 'width=800,height=300,resizable=yes,toolbar=0,status=0'); return false" title="Twitter">
+        Twitter
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_vkontakte" href="https://vk.com/share.php?url=https://habr.com/ru/post/242359/" onclick="window.open(this.href, 'ВКонтакте', 'width=800,height=300,toolbar=0,status=0'); return false" title="ВКонтакте">
+        ВКонтакте
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_telegram" href="https://t.me/share/url?url=https://habr.com/ru/post/242359/&amp;title=ZeroMQ: сокеты по-новому" onclick="window.open(this.href, 'Telegram', 'width=800,height=300,toolbar=0,status=0'); return false" title="Telegram">
+        Telegram
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_pocket" href="https://getpocket.com/edit?url=https://habr.com/ru/post/242359/&amp;title=ZeroMQ: сокеты по-новому" target="_blank" title="Pocket">
+        Pocket
+      </a>
+    </li>
+  </ul>
+</div>
+
+          </div>
+        </div>
+      </li>
+
+
+
+
+
+  </ul>

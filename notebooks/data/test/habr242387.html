@@ -1,0 +1,407 @@
+<article class="post post_full" id="post_242387" lang="ru">
+  <div class="post__wrapper">
+    <header class="post__meta">
+        <a class="post__user-info user-info" href="https://habr.com/ru/users/abz_dn_ua/" title="Автор публикации">
+            <img class="user-info__image-pic user-info__image-pic_small" height="24" src="//habrastorage.org/getpro/habr/avatars/8b8/f49/85e/8b8f4985e02d659562f116223bff4e5f.jpg" width="24"/>
+          <span class="user-info__nickname user-info__nickname_small">abz_dn_ua</span>
+        </a>
+
+      <span class="post__time" data-time_published="2014-11-05T11:59Z">5 ноября 2014 в 14:59</span>
+
+      
+    </header>
+
+    <h1 class="post__title post__title_full">
+      <span class="post__title-text">Как сделать прибыльной разработку дизайна сайтов (часть 3)</span>
+    </h1>
+
+
+      <ul class="post__hubs post__hubs_full-post inline-list">
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/web_design/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Веб-дизайн'); }" title="Вы не подписаны на этот хаб">Веб-дизайн</a>
+          </li>
+      </ul>
+
+    <ul class="post__marks inline-list"></ul>
+
+    <div class="post__body post__body_full">
+      <div class="post__text post__text-html post__text_v1" data-io-article-url="https://habr.com/ru/post/242387/" id="post-content-body"><img alt="image" src="https://habrastorage.org/getpro/habr/post_images/8df/f95/fb4/8dff95fb4cdffe9aa357de80357991df.png"/><br/>
+<br/>
+В предыдущих статьях мы рассмотрели <a href="http://habrahabr.ru/post/241099/">проблемы</a> повседневности и их решение для темы «<a href="http://habrahabr.ru/post/241730/">встреч</a>». Сегодня рассмотрим решение следующей проблемы.<br/>
+<br/>
+<h4>Тема сегодня «Постановка задачи»</h4><br/>
+<blockquote>Я бы с тобой согласился, но тогда мы оба будем неправы.</blockquote><br/>
+Напомню суть проблемы. У вас есть подписанный договор. В голове у вас мысли, напоминающие взбаламученную бурей воду. Много идей, что можно нарисовать. Множество мыслей, как удивить будущего посетителя нового ресурса, чтобы он зашел и сказал «WOW, its cool», и разослал знакомым или поставил лайк. У вас уже пошли мысли, как вам вручат награду thefwa, awwwards или cssdesignawards (.com). Иногда видится даже такой момент, когда выходишь с договором в руке и предоплатой на банковском счету: звучит музыка, светит солнце, тебе все вокруг улыбаются.<br/>
+<a name="habracut"></a><br/>
+<h4>Разбор задачи</h4><br/>
+Приезжаешь в офис (дом/контору), и тут наступает момент осознания того, сколько всего нужно сделать. Садишься и начинаешь думать: с чего начать?, как бы все не забыть?, «а вот это мы обсуждали … или забыли?», и др. Нужно все рассказать дизайнеру (руководителю / исполнителям). Подзываем и начинаем рассказ: «нам нужно сделать проект ...». Все слушают, затем вставляют свои «5 копеек», иногда слушают и записывают, иногда просто слушают и кивают. Бывает, зацепятся за что-то и тема уходит не туда, прибавляется юмор. Итог на следующий день — никто толком не помнит, что нужно сделать. В лучшем случае, на следующий день или через день дизайнер принесет первые идеи и спросит: «а что там на следующих страницах?».<br/>
+<br/>
+<blockquote>После чего хочется сказать: «Мы же с вами вместе читали ТЗ, рисовали на доске схемы страниц, обсуждали функционал ...». Но факт остается фактом. Во-первых, если вы разработчик, то на вас вся ответственность, вы свое дело лучше знаете, во-вторых — все мы люди, и нам свойственно забывать что-то (если говорить о штатных, то вот они никогда не забывают, в каком кафе, когда и во сколько они хотят попить чай и какой фильм они не хотят пропустить из-за твоей презентации нового проекта). Опять же, после этого вы, верно, обидитесь или захотите сказать, что у вас не такой персонал. Если это так, то вам повезло!</blockquote><br/>
+Давайте прекратим повторять структуру проекта, какие страницы в него входят, какие из них нужно нарисовать. Конечно, есть места, которые просто необходимо обсудить и переобсудить. Например, главная страница или страница сервиса, которая должна быть всем понятна и продавать — ключевые страницы сервиса.<br/>
+<br/>
+<h4>Структурируйте работу с первой минуты</h4><br/>
+Что вам нужно? Пообщались с клиентом — заведите сразу Google.документ. Да, кому-то нужно с ним разобраться. Но те 30 мин, что вы потратите (сделайте это прямо сейчас), окупятся с первым же клиентом. Регистрация аккаунта Google, создание документа, присвоение названия документу, выставление 9-го кегля, единичные отступы по периметру, формат А4 — все это можно легко и быстро сделать. Не забывайте проставлять нумерацию страниц, это позволит вам сократить время, когда вы захотите сослаться на документ: «вот ссылка <a href="http://docs.google">docs.google</a>… вы писали в комментарии на 3й странице ...». Также научитесь пользоваться короткими ссылками и дайте клиенту короткий URL (<a href="https://goo.gl">https://goo.gl</a>). (_!_) Отправьте ссылку клиенту или попросите у него gmail почту, а если клиент вредный, откройте сразу документ на доступ по ссылке. Не забывайте пользоваться комментариями.<br/>
+<br/>
+<blockquote>«Если человек не может написать то, что ему нужно — он не знает, что ему нужно» — так я всегда говорю открыто клиентам и это работает, это задевает человека и он идет на принцип (если эту фразу до меня сказал кто то еще напишите мне).</blockquote><br/>
+Далее: вам нужно перебороть себя и научиться писать в этом документе ВСЁ, что хотите сделать для клиента. И <b>заставляйте</b> вашего <b>клиента писать</b> ВСЁ, <b>что он хочет</b>, в нем. Давайте вспомним статью из (<a href="http://habrahabr.ru/post/241730/">часть2</a>) и то, что нам нужно экономить свое время и время клиента. Этот файл не ограничивает клиента, он не подталкивает его прямо сейчас что-то сказать вам, прямо сейчас вам дать ответ. Человек может днем получить ссылку, вечером прочитать и утром написать ответ. Преимущества, широчайшие возможности, поддержка на всех устройствах, групповая работа и <i>автообновление</i> — все эти преимущества google.документа вы можете загуглить. Вам не нужно пересылать или писать письма, следить за версиями … и вообще что-либо делать — дайте ссылку, и клиент будет рад. Вспомним еще момент из (<a href="http://habrahabr.ru/post/241730/">часть2</a>): клиент сразу видит, что вы владеете передовыми инструментами. Ему все равно, какая у вас версия Photoshop или количество оперативной памяти — он видит вашу осведомленность, которая передается через инструменты взаимодействия с ним.<br/>
+<br/>
+<h4>Что нам дает «общий документ»</h4><br/>
+Свободу! Вы можете пустить в него клиента, его помощников, своих сотрудников еще до начала работы над проектом. Составляйте его сразу правильно. Не делайте из него свалку мусора. Следите за оформлением. Клиент не понимает правила оформления текста. Оформляйте за ним, он это увидит и оценит. Если у вас даже в документе порядок — значит и работа у вас вся отточена. Не допускайте не малейшего шанса усомниться в этом.<br/>
+<br/>
+Дальше вам карты в руки … Как мы ведем свои документы? По-разному. Но есть в них и что-то общее:<ul>
+<li>Блок информация — в нем мы размещаем ссылки на все ресурсы, фото и документы, что дает нам клиент. Для этого можно создать папку с именем проекта в Google диске и закинуть в нее все материалы, открывая к ним различную степень доступа. Вплоть до того, что в ней могут быть ссылки на договоры и счета (но доступы только у тех, кому нужно). В этом блоке стоит указать, кто каким цветом пишет;</li>
+<li>Блок структура проекта. Структурированное расписание всего проекта, всех страниц и подстраниц;</li>
+<li>Блок обсуждаемый. Важный блок. Взяв выдержки из него, можно составить ТЗ, проектную документацию, приложение к договору (также экономит время оставление этих документов в Google docs; бухгалтер или юрист быстро напишет вам свои комментарии);</li>
+<li>Блок вопросов. Отделите блок сумбурных вопросов от сути, обсуждаемой выше.</li>
+<li>Блок сметы. Каждый ведет этот блок по-своему.</li>
+</ul><br/>
+<blockquote>Подобную свободу дают другие сервисы, <br/>
+которые мы рассмотрим позже,<br/>
+например (m) maquetter, Mock Flow</blockquote><br/>
+<h4>Итог</h4><br/>
+На выходе вы имеете подписанный договор и предоплату на счете. У вас есть структурированная информация от клиента на данный момент, которую вам остается пополнять каждый раз, когда он пришлет вам что-либо новое. Преимущество это доступно всем вашим сотрудникам сразу.<br/>
+<br/>
+Договор и другие Google документы у вас лежат там же. Вы сидите в гостях в друга, спите с любовницей, отдыхаете в выходной день. Тут вам звонит клиент и говорит, что принимает у вас первый этап работ, и если вы ему предоставите счет через 5мин, он его подпишет, а бухгалтерия его оплатит. Иначе вам нужно будет ждать его 21 день с теплых краев в зимнюю стужу. Что вам нужно — сесть за компьютер, планшет, да даже с телефона скопировать документ и выслать ссылку в виде смс. И отдыхать дальше.<br/>
+<br/>
+Общий Google документ, с которым вы придете в офис и просто расшарите ссылку. Пойдете пить чай, пока все читают. Вы уже попотели над тем, чтобы все собрать вместе, разложить по полочкам и дать на блюдечке с гугловской каемочкой. После прочтения вы, конечно, ответите на вопросы. Разберете все на доске. И что сделаете? Зафиксируете все в этом же документе. Запишете сюда все идеи, вопросы для клиента. Снабдите все картинками и скринами, если необходимо (доску можно фотографировать). И скажете клиенту: «посмотрите вопросы на 3й стр гугл докса». ВСЕ (_!_)<br/>
+<br/>
+В следующей главе мы поговорим с вами о прототипировании, зачем это нужно и как это поможет сэкономить время и заработать.<br/>
+<br/>
+Предыдущие части: <a href="http://habrahabr.ru/post/241099/">Часть1</a>, <a href="http://habrahabr.ru/post/241730/">Часть2</a>, Часть3, <a href="http://habrahabr.ru/post/242979/">Часть4</a>, <a href="http://habrahabr.ru/post/243449/">Часть5</a>.<br/>
+<br/>
+<i><b>p.s. (_!_) </b>Напоминаю читателям: тут не рассмариваются вопросы «как, что и зачем рисовать», описываю тут только организационные вопросы. Если вы еще не получили ответ, который ожидали, дождитесь следующих статей. Если вы это уже умеете и используете, отлично, я за вас рад, дайте послушать другим. Те, кто еще не применял что-то описанное — действуйте. Прямо сейчас садитесь и пробуйте. А опытные пусть вам в комментариях помогут.</i></div>
+      
+    </div>
+
+        <p class="for_users_only_msg">Только зарегистрированные пользователи могут участвовать в опросе. <a href="https://habr.com/ru/auth/login/">Войдите</a>, пожалуйста.</p>
+
+      <div class="default-block default-block_bordered default_block_polling">
+    <div class="default-block__polling-header">
+      <h2 class="default-block__polling-title">Выполняете ли вы сразу рекомендации, что вам дают в литературе, на тренингах или статьях?</h2>
+    </div>
+
+    <div class="default-block__content default-block__content_polling">
+      <ul class="poll-result">
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">15,0%</strong><span class="poll-result__data-label">Да, по возможности сразу</span><span class="poll-result__data-votes">26<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 15.03%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">16,8%</strong><span class="poll-result__data-label">Да, стараюсь попробовать в этот или следующий день</span><span class="poll-result__data-votes">29<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 16.76%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">17,3%</strong><span class="poll-result__data-label">Да, пробую в течении недели</span><span class="poll-result__data-votes">30<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 17.34%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">13,9%</strong><span class="poll-result__data-label">Хочу, но то одно, то другое… сами понимаете</span><span class="poll-result__data-votes">24<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 13.87%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent poll-result__data-percent_winner">30,6%</strong><span class="poll-result__data-label">Нет, но для общего развития полезно</span><span class="poll-result__data-votes">53<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress poll-result__progress_winner" style="width: 30.64%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">6,4%</strong><span class="poll-result__data-label">Нет</span><span class="poll-result__data-votes">11<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 6.36%"></div>
+              </div>
+            </li>
+      </ul>
+    </div>
+    <div class="default-block__footer default-block__footer_polling">Проголосовали 173 пользователя. Воздержались 48 пользователей.</div>
+  </div>
+
+      <div class="default-block default-block_bordered default_block_polling">
+    <div class="default-block__polling-header">
+      <h2 class="default-block__polling-title">Изучаете сайты и начинаете пользоваться on-line сервисами, что вам дают в литературе, на тренингах или статьях?</h2>
+    </div>
+
+    <div class="default-block__content default-block__content_polling">
+      <ul class="poll-result">
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">19,4%</strong><span class="poll-result__data-label">Да, по возможности сразу</span><span class="poll-result__data-votes">30<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 19.35%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">16,8%</strong><span class="poll-result__data-label">Да, стараюсь попробовать в этот или следующий день</span><span class="poll-result__data-votes">26<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 16.77%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">20,6%</strong><span class="poll-result__data-label">Да, пробую в течении недели</span><span class="poll-result__data-votes">32<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 20.65%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">11,6%</strong><span class="poll-result__data-label">Хочу, но то одно, то другое… сами понимаете</span><span class="poll-result__data-votes">18<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 11.61%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent poll-result__data-percent_winner">26,4%</strong><span class="poll-result__data-label">Нет, но для общего развития полезно</span><span class="poll-result__data-votes">41<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress poll-result__progress_winner" style="width: 26.45%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">5,2%</strong><span class="poll-result__data-label">Нет</span><span class="poll-result__data-votes">8<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 5.16%"></div>
+              </div>
+            </li>
+      </ul>
+    </div>
+    <div class="default-block__footer default-block__footer_polling">Проголосовали 155 пользователей. Воздержались 48 пользователей.</div>
+  </div>
+
+      <div class="default-block default-block_bordered default_block_polling">
+    <div class="default-block__polling-header">
+      <h2 class="default-block__polling-title">Мне интересен цикл этих статей:</h2>
+    </div>
+
+    <div class="default-block__content default-block__content_polling">
+      <ul class="poll-result">
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">33,6%</strong><span class="poll-result__data-label">Пишите только коротко о том как ими пользоваться, больше рассказывайте о том для чего они и какие задачи решают</span><span class="poll-result__data-votes">38<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 33.63%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">26,6%</strong><span class="poll-result__data-label">Пишите больше, в подробностях: как пользоваться теми или иными решениями</span><span class="poll-result__data-votes">30<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 26.55%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent poll-result__data-percent_winner">39,8%</strong><span class="poll-result__data-label">Пишите и то и другое и побольше</span><span class="poll-result__data-votes">45<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress poll-result__progress_winner" style="width: 39.82%"></div>
+              </div>
+            </li>
+      </ul>
+    </div>
+    <div class="default-block__footer default-block__footer_polling">Проголосовали 113 пользователей. Воздержались 52 пользователя.</div>
+  </div>
+
+      <div class="default-block default-block_bordered default_block_polling">
+    <div class="default-block__polling-header">
+      <h2 class="default-block__polling-title">Что из подручных средств вы используете:</h2>
+    </div>
+
+    <div class="default-block__content default-block__content_polling">
+      <ul class="poll-result">
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">25,2%</strong><span class="poll-result__data-label">Доска для маркера</span><span class="poll-result__data-votes">41<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 25.15%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent poll-result__data-percent_winner">74,2%</strong><span class="poll-result__data-label">Листы бумаги, блокнот, ежедневник</span><span class="poll-result__data-votes">121<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress poll-result__progress_winner" style="width: 74.23%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">66,3%</strong><span class="poll-result__data-label">Локальные файлы</span><span class="poll-result__data-votes">108<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 66.26%"></div>
+              </div>
+            </li>
+            <li class="poll-result__item">
+              <div class="poll-result__data">
+                <strong class="poll-result__data-percent">66,3%</strong><span class="poll-result__data-label">Файлы в облаке</span><span class="poll-result__data-votes">108<span>
+              </span></span></div>
+              <div class="poll-result__bar">
+                <div class="poll-result__progress" style="width: 66.26%"></div>
+              </div>
+            </li>
+      </ul>
+    </div>
+    <div class="default-block__footer default-block__footer_polling">Проголосовали 163 пользователя. Воздержались 49 пользователей.</div>
+  </div>
+
+
+
+    <dl class="post__tags">
+      <dt class="post__tags-label">Теги:</dt>
+      <dd class="post__tags-list">    <ul class="inline-list inline-list_fav-tags js-post-tags">
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D0%B2%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%5D&amp;target_type=posts" rel="tag">веб-дизайн</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D0%B2%D0%B5%D0%B1-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B8%20%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%5D&amp;target_type=posts" rel="tag">веб-разработка и дизайн</a></li>
+    </ul>
+    <button class="btn btn_outline_grey btn_mini hidden js-fav-edit-link" data-id="242387" data-type="2" onclick="show_edit_tags(this)" type="button">Добавить метки</button>
+</dd>
+    </dl>
+      <dl class="post__tags">
+        <dt class="post__tags-label">Хабы:</dt>
+        <dd class="post__tags-list">
+          <ul class="inline-list inline-list_fav-tags js-post-hubs">
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/web_design/" rel="tag">
+                  Веб-дизайн
+                </a>
+              </li>
+          </ul>
+        </dd>
+      </dl>
+  </div>
+    <div class="overlay hidden" id="js-vote-reason">
+  <div class="popup popup_reasons">
+    <div class="popup__head popup__head_lang-settings">
+      <span class="popup__head-title">Укажите причину минуса, чтобы автор поработал над ошибками</span>
+      <button class="btn btn_small btn_popup-close js-hide_vote-reason" type="button">
+        <svg class="icon-svg" height="12" width="12">
+          <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="popup__body">
+       <span class="radio radio_custom reasons-vote__item js-vote-popup_list-item">
+          <input class="radio__input js-vote_radio" id="reasonList" name="reasonList" type="radio" value=""/>
+          <label class="radio__label radio__label_another js-vote_title" for="reasonList"></label>
+        </span>
+      <div id="js-vote-popup_list"></div>
+      <button class="btn btn_blue btn_huge js-vote_send" disabled="" type="button">Отправить анонимно</button>
+    </div>
+  </div>
+</div>
+
+</article><ul class="post-stats post-stats_post js-user_" data-post-type="publish_ugc_ru,h_47,f_design" id="infopanel_post_242387">
+          <li class="post-stats__item post-stats__item_voting-wjt">
+            <div class="voting-wjt voting-wjt_post js-post-vote" data-id="242387" data-type="2">
+              <button class="btn voting-wjt__button" data-action="plus" disabled="" onclick="posts_vote_plus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-up" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+
+              <span class="voting-wjt__counter voting-wjt__counter_positive js-score" onclick="posts_vote_result(16, 12, 4)" title="Всего голосов 16: ↑12 и ↓4">+8</span>
+
+              <button class="btn voting-wjt__button" data-action="minus" disabled="" onclick="posts_vote_minus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-down" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+            </div>
+          </li>
+    <li class="post-stats__item post-stats__item_bookmark">
+      <button class="btn bookmark-btn bookmark-btn_post" data-action="add" data-id="242387" data-post-type="publish_ugc_ru,h_47,f_design" data-type="2" disabled="" onclick="posts_add_to_favorite(this);" title="Только зарегистрированные пользователи могут добавлять публикации в закладки" type="button">
+        <span class="btn_inner"><svg class="icon-svg_bookmark" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#book"></use></svg><span class="bookmark__counter js-favs_count" title="Количество пользователей, добавивших публикацию в закладки">229</span></span>
+      </button>
+    </li>
+
+    <li class="post-stats__item post-stats__item_views">
+      <div class="post-stats__views" title="Количество просмотров">
+        <svg class="icon-svg_views-count" height="12" width="21"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#eye"></use></svg><span class="post-stats__views-count">17,5k</span>
+      </div>
+    </li>
+
+      <li class="post-stats__item post-stats__item_comments">
+          <a class="post-stats__comments-link" href="https://habr.com/ru/post/242387/#comments" rel="nofollow">
+            <svg class="icon-svg_post-comments" height="16" width="16"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#comment"></use></svg><span class="post-stats__comments-count" title="Читать комментарии">6</span>
+          </a>
+      </li>
+
+
+      <li class="post-stats__item post-stats__item_share">
+        <div class="dropdown dropdown_share">
+          <div class="post-stats__share" data-toggle="dropdown" href="https://habr.com/ru/post/242387/#comments" rel="nofollow">
+            <svg class="icon-svg_post-share" height="24" width="24">
+              <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#share">
+            </use></svg>
+            <span class="post-stats__comments-text" title="Поделиться">
+              Поделиться
+            </span>
+          </div>
+
+          <div class="dropdown-container">
+            <div class="post-share">
+  <ul class="post-share__buttons">
+    <li class="post-share__item post-share__item_post">
+      <span class="post-share__item-link post-share__item-link_normal post-share__item-link_copy" onclick="copyCurrentUrl(), $('.dropdown_share').removeClass('dropdown_active')" title="Скопировать ссылку">
+        Скопировать ссылку
+      </span>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://habr.com/ru/post/242387/" onclick="window.open(this.href, 'Facebook', 'width=640,height=436,toolbar=0,status=0'); return false" title="Facebook">
+        Facebook
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_twitter" href="https://twitter.com/intent/tweet?text=%D0%9A%D0%B0%D0%BA+%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C+%D0%BF%D1%80%D0%B8%D0%B1%D1%8B%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83+%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B0+%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2+%28%D1%87%D0%B0%D1%81%D1%82%D1%8C+3%29+https://habr.com/p/242387/+via+%40habr_com" onclick="window.open(this.href, 'Twitter', 'width=800,height=300,resizable=yes,toolbar=0,status=0'); return false" title="Twitter">
+        Twitter
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_vkontakte" href="https://vk.com/share.php?url=https://habr.com/ru/post/242387/" onclick="window.open(this.href, 'ВКонтакте', 'width=800,height=300,toolbar=0,status=0'); return false" title="ВКонтакте">
+        ВКонтакте
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_telegram" href="https://t.me/share/url?url=https://habr.com/ru/post/242387/&amp;title=Как сделать прибыльной разработку дизайна сайтов (часть 3)" onclick="window.open(this.href, 'Telegram', 'width=800,height=300,toolbar=0,status=0'); return false" title="Telegram">
+        Telegram
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_pocket" href="https://getpocket.com/edit?url=https://habr.com/ru/post/242387/&amp;title=Как сделать прибыльной разработку дизайна сайтов (часть 3)" target="_blank" title="Pocket">
+        Pocket
+      </a>
+    </li>
+  </ul>
+</div>
+
+          </div>
+        </div>
+      </li>
+
+
+
+
+
+  </ul>

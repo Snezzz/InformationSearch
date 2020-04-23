@@ -1,0 +1,366 @@
+<article class="post post_full" id="post_242385" lang="ru">
+  <div class="post__wrapper">
+    <header class="post__meta">
+        <a class="post__user-info user-info" href="https://habr.com/ru/users/Polazhenko/" title="Автор публикации">
+            <img class="user-info__image-pic user-info__image-pic_small" height="24" src="//habrastorage.org/getpro/habr/avatars/733/dc9/bdb/733dc9bdbaca0b0155456271a6cb4e29.jpg" width="24"/>
+          <span class="user-info__nickname user-info__nickname_small">Polazhenko</span>
+        </a>
+
+      <span class="post__time" data-time_published="2014-11-06T06:26Z">6 ноября 2014 в 09:26</span>
+
+      
+    </header>
+
+    <h1 class="post__title post__title_full">
+      <span class="post__title-text">Доклад с SQA Days — Тест-дизайн: проще читать или проще писать</span>
+    </h1>
+
+
+      <ul class="post__hubs post__hubs_full-post inline-list">
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/company/sqalab/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Блог компании Лаборатория тестирования'); }" title="Вы не подписаны на этот хаб">Блог компании Лаборатория тестирования</a>, 
+          </li>
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/it_testing/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Тестирование IT-систем'); }" title="Вы не подписаны на этот хаб">Тестирование IT-систем</a>, 
+          </li>
+          <li class="inline-list__item inline-list__item_hub">
+            <a class="inline-list__item-link hub-link" href="https://habr.com/ru/hub/mobile_testing/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Тестирование мобильных приложений'); }" title="Вы не подписаны на этот хаб">Тестирование мобильных приложений</a>
+          </li>
+      </ul>
+
+    <ul class="post__marks inline-list"></ul>
+
+    <div class="post__body post__body_full">
+      <div class="post__text post__text-html post__text_v1" data-io-article-url="https://habr.com/ru/company/sqalab/blog/242385/" id="post-content-body"><a href="http://it-conf.ru/ru/profile/18107">Александр Александров</a> — «дедушка тестирования» в СНГ делал <a href="http://sqadays.com/ru/talk/18189">доклад на </a>юбилейной 15-ой SQA Days в Москве. <br/>
+<br/>
+Слайды:<br/>
+<a href="http://www.slideshare.net/VLDCORP/ss-33747358">www.slideshare.net/VLDCORP/ss-33747358</a><br/>
+<br/>
+Видео выступления:<br/>
+<iframe allowfullscreen="" frameborder="0" height="197" mozallowfullscreen="" src="https://player.vimeo.com/video/94481393" title="Тест-дизайн: проще читать или проще писать" webkitallowfullscreen="" width="560"></iframe><br/>
+<br/>
+<a name="habracut"></a><br/>
+<b>План выступления</b><br/>
+1.Тест-дизайн<br/>
+2.Как проверять тестируемость требований<br/>
+3.Требования и тестирование без тест-кейсов и/или без тестировщиков<br/>
+4.Требования и изменения<br/>
+5.Проще читать или проще писать<br/>
+6.Как устроены тест-кейсы<br/>
+7.Какие возникают трудности<br/>
+8.Как их преодолевать<br/>
+<br/>
+Начнем с того, что существует повышение общего интереса к автоматизации, это тренд и это хорошо! Но возрастает <b>необходимость «фундамента» для разработки автоматизированных тестовых скриптов</b>. Ведь если такого фундамента нет, то мы получаем сложность создания, использования и сопровождения скриптов. Не понятно, что они проверяют, не понятно, как они проверяют и не понятно, как они связаны с требованиями! Эта ситуация хорошо знакома тем, кто эти скрипты разрабатывает и тем, кто этими скриптами пользуется, а также тем, кто верит той информации, которая эти скрипты предоставляет.<br/>
+<br/>
+Также следующий важный тезис — <b>важность всего перечисленного вне контекста автоматизации тестирования</b>. Замените все, что касается автоматического тестирования на ручное тестирование, и вы получите ровно тоже самое!<br/>
+Итак, что же мы хотим?<br/>
+<br/>
+Мы хотим упрощение и ускорение работы, а также повышение надежности результатов работы для:<br/>
+ — Тестировщика;<br/>
+ — Разработчика автоматизированных тестовых скриптов;<br/>
+ — Тест-менеджера, анализирующего результаты тестирования (ручного / автоматизированного)/ заказчик/будущие пользователи и т.д.<br/>
+<br/>
+Мой доклад будет из двух неравных частей. В первой я напомню, что такое тест-дизайн, а во второй как обойти ошибки и пореже наступать на одни и те же «грабли».<br/>
+<br/>
+<b>Как проверять тестируемость требований</b><br/>
+<br/>
+Мантры требований:<br/>
+<ul>
+<li>Полнота</li>
+<li>Непротиворечивость</li>
+<li>Однозначность</li>
+<li>Трассируемость</li>
+<li>Осуществимость</li>
+<li>Тестируемость</li>
+<li>…</li>
+</ul><br/>
+<br/>
+Каждые требования должны проверяться. Существуют основные критерии, на которые нужно ориентироваться. Человек может ошибаться при проверке требований. Поэтому нужно знать, как их надежно проверить! Обратите внимание, я не говорю, идеально проверить! Это невозможно! Хотя бы надежно проверить!<br/>
+<br/>
+<b>1 метод — Раннее проектирование тест-кейсов</b><br/>
+То есть, как только вы начинаете использовать UML-диаграммы, story, несколько раз просмотренные, с замечаниями, начинается проектирование, то вы должны задавать вопросы: какое ограничение на это поля, а что будет после этого действия, а кто должен это сделать, а какой период по умолчанию. Благодаря этому достаточно легко обнаружить много пропусков на этапе проектирования тест-кейсов.<br/>
+<br/>
+<b>2 метод — Визуализация связи тест-кейсов и требований</b> (где и как проверяется эта фича)<br/>
+Потому что может оказаться, что вы написали 3000 тест-кейсов, все совершенно замечательно, но какие-то важные вещи мы просто не проверили. Причины разные: забыли, не поняли, подумали, что сделано «очевидным» для нас путем, что-то пропустили. Я указываю на это, не потому, что у меня есть универсальное решение, а потому, что так мы поступаем каждый день!<br/>
+<br/>
+Следующий аспект, <b>а зачем вообще нужно что-то, кроме требований?</b><br/>
+Давайте сравним! Разница на первый взгляд очень простая, но по сути, она глубинная! Идея того, зачем нужно тестирование требований. <br/>
+<br/>
+<b>Требования vs. Тестирование</b><br/>
+<br/>
+<ul>
+<li><b>Требования</b>: определить, что и как должно работать</li>
+<li><b>Тестирование</b>: определить, что не работает или работает не так, как должно работать</li>
+</ul><br/>
+<br/>
+<b>Соответствие программного продукта предъявляемым требованиям</b> должна отвечать на следующие вопросы: <br/>
+? Все ли требования реализованы?<br/>
+? Все ли требования реализованы правильно?<br/>
+? Нет ли лишнего?<br/>
+? Адекватная ли диагностика?<br/>
+<br/>
+«Зачем вы пишите 1000 кейсов, а не проще бы взять тестировщика, дать ему требования, чтобы он по ним тестировал?» Я как тест-менеджер сталкиваюсь с этим вопросом регулярно. И мне приходится все время по разному на него отвечать. Буквально недавно я отвечал на этот же вопрос: «Вот у меня серьезный сложный проект на год, в нем участвует только 2 тестировщика, которые сами тестировали требования и писали кейсы. В течение года тестировщики ушли и новые благодаря их тест-кейсам и проделанному анализу смогли перенять суть проекта и продолжить работу над ним».<br/>
+Часто я слышу о том, что предлагают проводить тестирование, но без тест-кейсов и/или без тестировщиков. <br/>
+<br/>
+<b>Требования и тестирование без тест-кейсов и/или без тестировщиков</b><br/>
+<br/>
+ — Тестирование разработчиками – хорошо известны проблемы(субъекиновсть, незнание всего проекта, логика)<br/>
+ — Тестирование аналитиками – не нужны тест-кейсы? (интересная идея, но всегда тестируют положительны й сценарий). Проверяют лишь то, что работает как должно в требованиях, даже небольшие отклонения от корректного поведения не рассматривают. Проверяют линейный кейс, а связку требований, интеграционного тестирования не проводят)<br/>
+Конечно же, в таких случаях <b>качество и объем тестирования</b> сильно разнятся, тестирование занимает только 20%-30% от всего возможного объема + пропускаются серьезные <b>ошибки в требованиях</b>.<br/>
+<br/>
+Еще один важный аспект, на который я бы хотел обратить внимание – это то, что мы все время говорим и подразумеваем ситуацию, когда мы находимся в проекте разработки и у нас стабильная команда. Есть команда, которая профессиональна, и дружно работает. Но бывает так, что вам дают проект на сопровождение. Совершенно другая команда, в другой стране. Этих людей вы совершенно не знаете, и, конечно, есть проблемы с требованиями. Так как работ по разработке много, новых требований по системам делается мало, а сопровождение становится больше. Все это должно учитывать ряд особенностей.<br/>
+<br/>
+<b>Требования и изменения</b><br/>
+<br/>
+<ol>
+<li>Обязательность изменений</li>
+<li>«Неожиданность» изменений</li>
+<li>Способы фиксации изменений</li>
+<li>Матрица связи требований и тест-кейсов (оценка трудозатрат на реализацию и тестирование изменений)</li>
+<li>Влияние изменений на приложение в целом</li>
+</ol><br/>
+<br/>
+Также здесь важен аспект тест-дизайна, так как если вы каждый раз в проекте, который вам дан на сопровождение, будете загадывать загадку: «Как мне протестировать то или иное изменение?», то потратите очень много времени и некоторые попытки могут быть совершенно неудачные. В то же время, работа по составлению тест-дизайна выполненная один раз до его изменения может вполне вам помочь.<br/>
+И предпоследний аспект из общей части, которую мы сейчас закончим, является <b>тестирование, управляемое данными</b>:<br/>
+<br/>
+<ul>
+<li>Выводятся <b>ожидаемые результаты</b> в ответ на правильно вводимые данные</li>
+<li>Адекватная реакция на <b>некорректные данные</b>, в том числе и не зафиксированные в требованиях (соответствующие сообщения об ошибках)</li>
+</ul><br/>
+<br/>
+А также:<br/>
+<ul>
+<li><b>Классы эквивалентности</b></li>
+<li><b>Граничные значения</b></li>
+</ul><br/>
+<br/>
+Есть отдельно шаги тест-кейса и есть отдельно данные, которые подаются в тест-кейсе. Данные могут варьироваться, шаги тест-кейса стабильны, и мы тем самым можем проверить на большое количество ситуаций. Не говоря о той ситуации при тестировании, управляемое данными очень важно для случаев, когда у вас появляется эффект, зависящий от данных.<br/>
+<br/>
+И еще один аспект, о котором я бы хотел упомянуть, <b>гранулярность требований</b>. Детали могут быть более или менее подробными. Но вот какие нюансы возникают, если требования подробные, то сложно поддерживать, но просто использовать. А если мало деталей, то сложно использовать, а поддерживать проще. Можно найти разумный компромисс: <b>чек-листы</b> и <b>тестирование по требованиям</b>, но он всегда будет содержать в себе риски, которые хорошо известны.<br/>
+<br/>
+Перейдем ко второй части моего доклада.<br/>
+<br/>
+Структура тест-кейса хорошо известна, она описана чуть ниже и ничего нового человечество не придумало<br/>
+<br/>
+<b>Что пишут про структуру тест-кейса</b><br/>
+<br/>
+Тест-кейс включает:<br/>
+ — Формат;<br/>
+ — Контент; <br/>
+Формат везде одинаков;<br/>
+ — Порядковый номер шага;<br/>
+ — Воздействие на систему;<br/>
+ — Ожидаемый результат;<br/>
+ И помните! Дьявол кроется в деталях!<br/>
+<br/>
+Если мы проведем сравнение форматов, то мы увидим, что содержательно все у всех одинаково. Анализ и сравнение форматов:<br/>
+<br/>
+<ul>
+<li>Содержательно одинаковые:</li>
+<li>Можно еще поискать в книгах, Интернете…</li>
+<li>Адекватен ли контент формату?</li>
+</ul><br/>
+<br/>
+Вот можно посмотреть один пример. <br/>
+<br/>
+<img src="https://habrastorage.org/files/caf/2f0/ce6/caf2f0ce604544168cf8f390cde09706.jpg"/><br/>
+<br/>
+Обратите внимание на таблицу, у нас порядковый номер, действие, данные, которые мы вводим и ожидаемый результат. И что мы видим?<br/>
+Во-первых, мы видим ожидаемый результат не там, потом видим не совсем корректное описание действия ( «если кнопка недоступна, то нажмите» — вопрос, должна ли быть кнопка доступна или нет?), цифры в ожидаемом результате – обозначаются некорректно (если трехзначное число, дробная часть и т.д.<br/>
+Формально, все моменты включены, но по этим действиям мы не можем получить достоверную информацию о качестве продукта, так как возможно пропущены необходимые тесты.<br/>
+<b>Хорошо известно, что такое тестирование, управляемое данными</b>. Но мы предлагаем его более детально. Расширение за счет данных делается несложно<br/>
+<br/>
+<b>Отделение шагов от данных</b><br/>
+<br/>
+1. Раздельное описание со ссылками<br/>
+2. Связь данных и ожидаемых результатов<br/>
+<b>Шаги</b><br/>
+1. Действия для выполнения тест-кейса<br/>
+2. Правила навигации<br/>
+<b>Данные</b><br/>
+1. То, что пользователь вводит и/или выбирает и/или нажимает (поле, список, …)<br/>
+2. Ожидаемые результаты<br/>
+<b>Структура тест-кейса (уточнение)</b>. Меняем формат:<br/>
+<ul>
+<li>Порядковый номер шага</li>
+<li>Воздействие на систему</li>
+<li>Ссылка на данные (что за ссылка, которую необходимо)</li>
+<li>Ожидаемый результат (возможно, ссылка на данные и/или иллюстрация)</li>
+</ul><br/>
+И что мы получаем в результате таких изменений?<br/>
+<br/>
+<img src="https://habrastorage.org/files/6d7/b09/ed9/6d7b09ed9b65430ebe09eb097a45309c.jpg"/><br/>
+<br/>
+Все тут совершенно замечательно, кроме того, что тут написано «введите данные», к тому же частое использование терминов, таких как “any”, “correct”, “expected” и т.д.<br/>
+<b>Наше следующее предложение по структуре тест-кейса</b>. Избавляемся от:<br/>
+<ol>
+<li>Циклов типа «Повторить шаги 5-73 для всех возможных данных»</li>
+<li>Конструкций типа «любой», «соответствующий». «подходящий», «ожидаемый» без необходимых уточнений, например:</li>
+</ol><br/>
+Обратите внимание, остается что-нибудь еще?<br/>
+<br/>
+<img src="https://habrastorage.org/files/e79/3ef/2da/e793ef2daaf84197a293ec541064f1bd.jpg"/><br/>
+<br/>
+Да, это ссылка на внешний документ, к которому придется обратиться тестировщику для получения подтверждения корректного ожидаемого результата. Тут мы вспоминаем как называется доклад <b>«Тест-дизайн: проще читать или проще писать»</b><br/>
+Что я предлагаю?<br/>
+<br/>
+<img src="https://habrastorage.org/files/44c/43e/3c9/44c43e3c971545e6a7a10eec3689ef70.jpg"/><br/>
+<br/>
+Особое внимание я бы хотел обратить на подготовку данных. Понятно, что тест кейс может выполняться в любой ситуации. Система должна находиться в неком состоянии и это состояние должно быть заполненным. Бывают случаи, когда для того, чтобы подготовить данные нужно еще произвести какие-то действия, включающие несколько сотен шагов. Поэтому очень важно регистрировать данные, с которыми вы работаете. А еще лучше, если у вас есть возможность получить именно те данные, с которыми будет работать сам заказчик.<br/>
+<br/>
+<b>Данные</b>:<br/>
+1. Роли, значения <br/>
+2. Ссылки на хранилище данных (запросы)<br/>
+<b>Подготовка данных</b>:<br/>
+1. Предусловия (состояние базы данных)<br/>
+2. Выполнение SQL запросов<br/>
+3. Действия в формате тест-кейсов<br/>
+<br/>
+Предложенные решения являются разумным компромиссом сложности шагов и наборов данных. Иногда стоит написать два-три похожих тест-кейса, сократив на порядок объем наборов данных (за счет повторов). Все это позволит тестировщику не сбиться и пропустить что-то, а разработчику легче будет строить отображение кода скриптов на описание тест-кейса (необходимо при анализе и сопровождении скриптов). <br/>
+<br/>
+Да, тест-дизайном мы осложняем их работу, но зато повышаем ее качество. Тест-дизайн самое сложное, что есть в тестирование. Не бывает двух похожих тест-дизайнов. В большинстве случаев, в моей практике, введение тест-дизайна на постоянной основе дает экономию трудозатрат тестирования ручного и автоматического тестировщика. И, конечно, это требует высокой квалификации тест-дизайнера. Можно взять тестировщика и даже разработчика и обучить, то может получиться хороший тест-дизайнер. Просто с улицы человека этому не обучить.</div>
+      
+    </div>
+
+    
+
+    <dl class="post__tags">
+      <dt class="post__tags-label">Теги:</dt>
+      <dd class="post__tags-list">    <ul class="inline-list inline-list_fav-tags js-post-tags">
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%82%D0%B5%D1%81%D1%82-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%5D&amp;target_type=posts" rel="tag">тест-дизайн</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8%5D&amp;target_type=posts" rel="tag">управление требованиями</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5B%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%5D&amp;target_type=posts" rel="tag">тестирование по</a></li>
+        <li class="inline-list__item inline-list__item_tag"><a class="inline-list__item-link post__tag" href="https://habr.com/ru/search/?q=%5Btest%20driven%20development%5D&amp;target_type=posts" rel="tag">test driven development</a></li>
+    </ul>
+    <button class="btn btn_outline_grey btn_mini hidden js-fav-edit-link" data-id="242385" data-type="2" onclick="show_edit_tags(this)" type="button">Добавить метки</button>
+</dd>
+    </dl>
+      <dl class="post__tags">
+        <dt class="post__tags-label">Хабы:</dt>
+        <dd class="post__tags-list">
+          <ul class="inline-list inline-list_fav-tags js-post-hubs">
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/company/sqalab/" rel="tag">
+                  Блог компании Лаборатория тестирования
+                </a>
+              </li>
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/it_testing/" rel="tag">
+                  Тестирование IT-систем
+                </a>
+              </li>
+              <li class="inline-list__item inline-list__item_tag">
+                <a class="inline-list__item-link post__tag" href="https://habr.com/ru/hub/mobile_testing/" rel="tag">
+                  Тестирование мобильных приложений
+                </a>
+              </li>
+          </ul>
+        </dd>
+      </dl>
+  </div>
+    <div class="overlay hidden" id="js-vote-reason">
+  <div class="popup popup_reasons">
+    <div class="popup__head popup__head_lang-settings">
+      <span class="popup__head-title">Укажите причину минуса, чтобы автор поработал над ошибками</span>
+      <button class="btn btn_small btn_popup-close js-hide_vote-reason" type="button">
+        <svg class="icon-svg" height="12" width="12">
+          <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="popup__body">
+       <span class="radio radio_custom reasons-vote__item js-vote-popup_list-item">
+          <input class="radio__input js-vote_radio" id="reasonList" name="reasonList" type="radio" value=""/>
+          <label class="radio__label radio__label_another js-vote_title" for="reasonList"></label>
+        </span>
+      <div id="js-vote-popup_list"></div>
+      <button class="btn btn_blue btn_huge js-vote_send" disabled="" type="button">Отправить анонимно</button>
+    </div>
+  </div>
+</div>
+
+</article><ul class="post-stats post-stats_post js-user_" data-post-type="publish_corp_ru,c_sqalab,h_210,h_19281,f_develop" id="infopanel_post_242385">
+          <li class="post-stats__item post-stats__item_voting-wjt">
+            <div class="voting-wjt voting-wjt_post js-post-vote" data-id="242385" data-type="2">
+              <button class="btn voting-wjt__button" data-action="plus" disabled="" onclick="posts_vote_plus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-up" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+
+              <span class="voting-wjt__counter voting-wjt__counter_positive js-score" onclick="posts_vote_result(12, 10, 2)" title="Всего голосов 12: ↑10 и ↓2">+8</span>
+
+              <button class="btn voting-wjt__button" data-action="minus" disabled="" onclick="posts_vote_minus(this);" title="Голосовать могут только зарегистрированные пользователи" type="button"><svg class="icon-svg_arrow-down" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#vote-arrow"></use></svg></button>
+            </div>
+          </li>
+    <li class="post-stats__item post-stats__item_bookmark">
+      <button class="btn bookmark-btn bookmark-btn_post" data-action="add" data-id="242385" data-post-type="publish_corp_ru,c_sqalab,h_210,h_19281,f_develop" data-type="2" disabled="" onclick="posts_add_to_favorite(this);" title="Только зарегистрированные пользователи могут добавлять публикации в закладки" type="button">
+        <span class="btn_inner"><svg class="icon-svg_bookmark" height="16" width="10"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#book"></use></svg><span class="bookmark__counter js-favs_count" title="Количество пользователей, добавивших публикацию в закладки">66</span></span>
+      </button>
+    </li>
+
+    <li class="post-stats__item post-stats__item_views">
+      <div class="post-stats__views" title="Количество просмотров">
+        <svg class="icon-svg_views-count" height="12" width="21"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#eye"></use></svg><span class="post-stats__views-count">17,9k</span>
+      </div>
+    </li>
+
+      <li class="post-stats__item post-stats__item_comments">
+          <a class="post-stats__comments-link" href="https://habr.com/ru/company/sqalab/blog/242385/#comments" rel="nofollow">
+            <svg class="icon-svg_post-comments" height="16" width="16"><use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#comment"></use></svg><span class="post-stats__comments-text" title="Добавить комментарий">Комментировать</span>
+          </a>
+      </li>
+
+
+      <li class="post-stats__item post-stats__item_share">
+        <div class="dropdown dropdown_share">
+          <div class="post-stats__share" data-toggle="dropdown" href="https://habr.com/ru/company/sqalab/blog/242385/#comments" rel="nofollow">
+            <svg class="icon-svg_post-share" height="24" width="24">
+              <use xlink:href="https://habr.com/images/1587395499/common-svg-sprite.svg#share">
+            </use></svg>
+            <span class="post-stats__comments-text" title="Поделиться">
+              Поделиться
+            </span>
+          </div>
+
+          <div class="dropdown-container">
+            <div class="post-share">
+  <ul class="post-share__buttons">
+    <li class="post-share__item post-share__item_post">
+      <span class="post-share__item-link post-share__item-link_normal post-share__item-link_copy" onclick="copyCurrentUrl(), $('.dropdown_share').removeClass('dropdown_active')" title="Скопировать ссылку">
+        Скопировать ссылку
+      </span>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://habr.com/ru/company/sqalab/blog/242385/" onclick="window.open(this.href, 'Facebook', 'width=640,height=436,toolbar=0,status=0'); return false" title="Facebook">
+        Facebook
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_twitter" href="https://twitter.com/intent/tweet?text=%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4+%D1%81+SQA+Days+%E2%80%94+%D0%A2%D0%B5%D1%81%D1%82-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%3A+%D0%BF%D1%80%D0%BE%D1%89%D0%B5+%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C+%D0%B8%D0%BB%D0%B8+%D0%BF%D1%80%D0%BE%D1%89%D0%B5+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+https://habr.com/p/242385/+via+%40habr_com" onclick="window.open(this.href, 'Twitter', 'width=800,height=300,resizable=yes,toolbar=0,status=0'); return false" title="Twitter">
+        Twitter
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_vkontakte" href="https://vk.com/share.php?url=https://habr.com/ru/company/sqalab/blog/242385/" onclick="window.open(this.href, 'ВКонтакте', 'width=800,height=300,toolbar=0,status=0'); return false" title="ВКонтакте">
+        ВКонтакте
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_telegram" href="https://t.me/share/url?url=https://habr.com/ru/company/sqalab/blog/242385/&amp;title=Доклад с SQA Days — Тест-дизайн: проще читать или проще писать" onclick="window.open(this.href, 'Telegram', 'width=800,height=300,toolbar=0,status=0'); return false" title="Telegram">
+        Telegram
+      </a>
+    </li>
+    <li class="post-share__item post-share__item_post">
+      <a class="post-share__item-link post-share__item-link_normal post-share__item-link_pocket" href="https://getpocket.com/edit?url=https://habr.com/ru/company/sqalab/blog/242385/&amp;title=Доклад с SQA Days — Тест-дизайн: проще читать или проще писать" target="_blank" title="Pocket">
+        Pocket
+      </a>
+    </li>
+  </ul>
+</div>
+
+          </div>
+        </div>
+      </li>
+
+
+
+
+
+  </ul>
